@@ -50,12 +50,14 @@ docker-compose down && docker-compose up
 ```sh
 Project
 ├─── web
+| └─── Dockerfile
 ├─── app
 │ ├─── Dockerfile
 │ ├─── requirements.txt
 │ └─── src
 │ └─── server.py
 └─── db
+  └─── password.txt
 ```
 
 2. Confira aqui o que a configuração do arquivo [server.py](https://github.com/claudimf/containerized_python_web_app/blob/main/app/src/server.py) com o seguinte conteúdo:
@@ -79,20 +81,21 @@ EXPOSE 5000
 CMD python server.py
 ```
 
-6. Na pasta app connstrua a aplicação no terminal com o comando:
+5. Na pasta app connstrua a aplicação no terminal com o comando:
 
 ```sh
 docker-compose build
 ```
 
-7. Suba o projeto no terminal com o comando:
+6. Suba o projeto no terminal com o comando:
 
 ```sh
 docker-compose up
 ```
 
-8. Para testar acesse as rotas:
+7. Para testar acesse as rotas:
 - [localhost:3000](http://localhost:3000)
+- [localhost:3000/blogs](http://localhost:3000/blogs)
 
 Pronto a aplicação de teste está de pé, para derrubar use o comando:
 
@@ -100,7 +103,7 @@ Pronto a aplicação de teste está de pé, para derrubar use o comando:
 docker-compose down
 ```
 
-Espero que tenha conseguido subir uma simples aplicação Flask + Docker via docker-compose, caso haja dúvidas acesse as [Referências utilizadas](https://github.com/claudimf/containerized_python#refer%C3%AAncias-utilizadas).
+Espero que tenha conseguido subir a aplicação Flask + Docker via docker-compose, caso haja dúvidas acesse as [Referências utilizadas](https://github.com/claudimf/containerized_python_web_app#refer%C3%AAncias-utilizadas).
 
 # Referências utilizadas
 
